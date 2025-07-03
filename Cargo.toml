@@ -1,0 +1,9 @@
+[package]
+name = "dcom"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+borsh = { version = "1.5.7", features = ["derive"]  }
+hex = "0.4.3"
+thiserror = "2"
