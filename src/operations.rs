@@ -19,7 +19,7 @@ use borsh::{BorshDeserialize, BorshSerialize};
 pub struct Message {
     pub operation_version: u8,
     pub target: String,
-    pub content: String,
+    pub payload: Vec<u8>,
 }
 
 #[derive(BorshSerialize, BorshDeserialize, Debug, Clone, PartialEq)]
