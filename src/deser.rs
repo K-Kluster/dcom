@@ -46,8 +46,8 @@ mod tests {
     fn test_encode_decode_message() {
         let message = Message {
             operation_version: 1,
-            target: "target".to_string(),
-            content: "content".to_string(),
+            target: Target::Group(vec![1, 2, 3].to_vec()),
+            payload: vec![1, 2, 3],
         };
         let operation = Operation::Message(message.clone());
         let encoded = encode_operation(operation).unwrap();
@@ -82,7 +82,7 @@ mod tests {
             extension_version: 1,
             category: "category".to_string(),
             name: "name".to_string(),
-            target: "target".to_string(),
+            target: Target::Everyone,
             payload: vec![1, 2, 3],
         };
         let operation = Operation::Extension(extension.clone());
